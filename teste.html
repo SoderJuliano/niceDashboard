@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script src="classes.js"></script>
     <style>
 
 
@@ -824,7 +825,7 @@
                                             <span class="icon">
                                                 <i class="fa fa-braille"></i>
                                                 <span style="font-size:15px; overflow:hidden;">Production Archives</span>
-                                                <input style="font-size:9px; overflow:hidden; display:inline-block; align-items:center; padding-left: 10%" type='file' accept='text/plain' onchange='openFile(event)' />
+                                                <input style="font-size:9px; overflow:hidden; display:inline-block; align-items:center; padding-left: 10%" type='file' accept='text/plain' onchange='openFile(event)' multiple/>
                                             </span>
                                         </span>
                                         <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
@@ -862,7 +863,7 @@
                                         <div></div>
                                         <div></div>
                                     </div>
-                                    <a href="http://cakecounter.com" target="_blank" class="hex-content">
+                                    <a onclick="fullDash()" class="hex-content">
                                         <span class="hex-content-inner">
                                             <span class="icon">
                                                 <i class="fa fa-life-ring"></i>
@@ -924,9 +925,19 @@
     <div id='output'>
         ...
     </div>
-    <script>function myFunction() {
-            window.open("/Users/julianosoder/Downloads/vao2_turno2_dia_19_7_2020_producao.html", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
-        }
+    <script>
+        function fullDash() {
+            window.open('dashboard.html', '_blank');
+    }
+    function myFunction() {
+        let t1 = 'vao' + getVao() + '_turno1_dia_' + getDateEmail() + '_producao.html'; 
+        let t2 = 'vao' + getVao() + '_turno2_dia_' + getDateEmail() + '_producao.html'; 
+        let t3 = 'vao' + getVao() + '_turno3_dia_' + getDateEmail() + '_producao.html'; 
+        window.open(t1, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=300,left=50,width=400,height=450");
+        window.open(t2, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=300,left=450,width=400,height=450");
+        window.open(t3, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=300,left=850,width=400,height=450");
+        document.getElementById('output').textContent = t1+t2+t3;
+    }
         var openFile = function (event) {
             var input = event.target;
 
@@ -936,8 +947,14 @@
                 var node = document.getElementById('output');
                 node.innerText = text;
                 console.log(reader.result.substring(0, 200));
-            };
-            reader.readAsText(input.files[0]);
+            }; alert(input.files.length);
+            if (input.files.length > 1) {
+                for (let i = 0; i < input.files.length; i++) {
+                    reader.readAsText(input.files[i]);
+                }
+            } else {
+                reader.readAsText(input.files[0]);
+            }
         };</script>
 </body>
 </html>

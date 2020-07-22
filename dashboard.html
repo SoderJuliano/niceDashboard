@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="classes.js"></script>
+    <script src="Chart.bundle.js" lang="pt-br"></script>
+    <script src="Chart.bundle.min.js"></script>
+    <script src="Chart.js"></script>
+    <script src="Chart.min.js"></script>
+    <script src="DB.js"></script>
+    <title>Full Dashboard</title>
+    <style>
+        body{
+            background-color:darkgray;
+            color:white
+        }
+        select {
+            margin-left: 20%;
+            margin-top: 5%;
+            font-family: fantasy;
+            font-size:16px;
+            font-weight:bold;
+            background-color:darkgray;
+            color:white;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <select id="graf"><option>bar</option><option>line</option><option>pizza</option></select>
+        <select id="day"><option>last one</option></select>
+    </div>
+    <div>
+        <canvas id="myChart-comparativo123" width="700" height="500"></canvas>
+        <canvas id="myChart-diario" width="700" height="500"></canvas>
+        <canvas id="myChart-pessoas" width="700" height="500"></canvas>
+        <canvas id="myChart-totais" width="700" height="500"></canvas>
+    </div>
+</body>
+</html>
