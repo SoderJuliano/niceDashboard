@@ -778,7 +778,7 @@
                                         <div></div>
                                         <div></div>
                                     </div>
-                                    <a href="https://www.youtube.com/watch?v=j0_gIAHkaj4&t=9s" target="_blank" class="hex-content">
+                                    <a onclick="welcome()" class="hex-content">
                                         <span class="hex-content-inner">
                                             <span class="icon">
                                                 <i class="fa fa-universal-access"></i>
@@ -929,10 +929,13 @@
         function fullDash() {
             window.open('dashboard.html', '_blank');
     }
+	 function welcome() {
+            window.open('welcome.html', '_blank' , "toolbar=yes,scrollbars=yes,resizable=yes,top=300,left=50,width=400,height=450");
+    }
     function myFunction() {
-        let t1 = 'vao' + getVao() + '_turno1_dia_' + getDateEmail() + '_producao.html'; 
-        let t2 = 'vao' + getVao() + '_turno2_dia_' + getDateEmail() + '_producao.html'; 
-        let t3 = 'vao' + getVao() + '_turno3_dia_' + getDateEmail() + '_producao.html'; 
+        let t1 = '../vao' + getVao() + '_turno1_dia_' + getDateEmail() + '_producao.html'; 
+        let t2 = '../vao' + getVao() + '_turno2_dia_' + getDateEmail() + '_producao.html'; 
+        let t3 = '../vao' + getVao() + '_turno3_dia_' + getDateEmail() + '_producao.html'; 
         window.open(t1, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=300,left=50,width=400,height=450");
         window.open(t2, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=300,left=450,width=400,height=450");
         window.open(t3, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=300,left=850,width=400,height=450");
